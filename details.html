@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  	<link rel="stylesheet" type="text/css" href="css/style1.css">
+</head>
+<body>
+  
+	<div id="header" style="background: #fff">
+	   <div id="one"></div>
+       <input type="text" name="" id="txt">
+       <input type="button" name="" value="搜索" id="btn">
+       <ul id="listone">
+          <li><a href="#">玩嗨精品</a></li>
+          <li><a href="#">新人专享</a></li>
+          <li><a href="#">好事成双</a></li>
+          <li><a href="#">反季风暴</a></li>
+          <li><a href="#">MarieBonne</a></li>
+          <li id="olastli"><a href="#">销售排行榜</a></li>
+       </ul>
+       
+       <dl id="shop">
+          <dt id="sdt">
+             <span id="dsp1">0</span>
+             <span id="dsp2"><img src="images/shop1.jpg"></span>
+             <a href="#" class="a1">购物车</a>
+             <span id="dsp3">&lt;</span>
+          </dt>
+          <dd id="sdd">购物车内还没有商品，赶紧选购吧</dd>
+       </dl>
+       <img src="images/One3.jpg" id="topR">    
+	</div>
+
+  <div id="nav">
+       <ul>
+         <li id="lione"><a href="#">全部商品分类</a></li>
+         <li><a href="#">首页</a></li>
+         <li><a href="#">TV购物</a></li>
+         <li><a href="#">团购</a></li>
+         <li><a href="#">全球购</a></li>
+         <li><a href="#">商城</a></li>
+         <li><a href="#">特惠活动</a></li>
+         <li><a href="#">会员俱乐部</a></li>
+         <li><a href="#">企业官网</a></li>
+       </ul>
+  </div>
+
+  <div id="content">
+         <!-- <div id="head"><span>hahaha</span></div>
+         <div id="left_box">
+               <div id="limg">
+                   <div></div>
+                   <div></div>
+               </div>
+               <div id="sns">
+                    <ul>
+                       <li>分享到
+                          <a href="##"></a>
+                          <a href="##"></a>
+                       </li>
+                       <li>
+                          <a href="##">收藏</a>
+                       </li>
+                      
+                    </ul>
+               </div>
+         </div>
+         
+         <div id="info_box">
+            <dl>
+               <dt>商品编号：</dt>
+               <dd></dd>
+            </dl>
+            <dl>
+               <dt>商品价格：</dt>
+               <dd>
+                  <span></span>
+               </dd>
+            </dl>
+            <dl>
+               <dt>积分</dt>
+               <dd>
+                  <b></b>
+                  <span></span>
+               </dd>
+            </dl>
+            赠品
+            
+            <dl>
+               <dt>数量</dt>
+               <dd>
+                  <input type="button" value="-" name="" id="btn1">
+                  <input type="text" value="1" id="txt1">
+                  <input type="button" value="+" name="" id="btn2">
+               </dd>
+            </dl>
+            <dl>
+               <input type="button" name="" id="btn3" value="立即购买">
+               <input type="button" name="" id="btn4" value="加入购物车">
+            <dl>
+         </div> -->
+  </div>
+</body>
+</html>
+<script type="text/javascript" src="js/main1.js"></script>
+<script type="text/javascript" src="pool.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript">
+    var aid = location.href.split("?")[1].split("=")[1];
+    for(var i=0;i<obj2.length;i++){
+    var str1 = "";
+    //根据id在数据中寻找对应数据，将其打印
+    if(obj2[i].id == aid){
+      str1+=`
+         <div id="head"><span>${obj2[i].head}</span></div>
+         <div id="left_box">
+               <div id="limg">
+                  <div class="box">
+                     <div class="filter"></div>
+                     <a href="#" id="middle" width="338" height="338"></a>
+                  </div>
+                  <div id="minImg"></div>
+                  <div class="max">
+                       <img src="" class="bigImg">
+                  </div>
+
+               </div>
+               <div id="sns">
+                    <ul>
+                       <li>分享到
+                          <a href="##"></a>
+                          <a href="##"></a>
+                       </li>
+                       <li>
+                          <a href="##">收藏</a>
+                       </li>
+                      
+                    </ul>
+               </div>
+         </div>
+
+         <div id="info_box">
+            <dl>
+               <dt>商品编号：</dt>
+               <dd>${obj2[i].title}</dd>
+            </dl>
+            <dl>
+               <dt>商品价格：</dt>
+               <dd>
+                  <span>${obj2[i].pirce}</span>
+               </dd>
+            </dl>
+            <dl>
+               <dt>积分</dt>
+               <dd>
+                  <b></b>
+                  <span>${obj2[i].point}</span>
+               </dd>
+            </dl>
+            <dl id="send">
+               <dt>配送</dt>
+               <dd><input type="text" ></dd>
+            </dl>
+            <dl id="dl4">
+               <dt>数量</dt>
+               <dd>
+                  <input type="button" value="-" name="" id="btn1">
+                  <input type="text" value="1" id="txt1">
+                  <input type="button" value="+" name="" id="btn2">
+               </dd>
+            </dl>
+            <dl id="dl5">
+               <input type="button" name="" id="btn3" value="立即购买">
+               <input type="button" name="" id="btn4" value="加入购物车">
+            <dl>
+         </div>`
+
+         var ocontent = document.getElementById("content");
+         ocontent.innerHTML = str1;
+        }
+        
+
+    }
+    
+    for(var i=0;i<obj2.length;i++){
+    var str2 = "";
+    if(obj2[i].id == aid){
+            for(var j=0;j<obj2[i].minImg.length;j++){
+              str2 +=`<img src=${obj2[i].minImg[j]}>;`
+            }
+
+            var ominimg = document.getElementById("minImg");
+            ominimg.innerHTML = str2;
+            
+        }
+    }
+
+    for(var i=0;i<obj2.length;i++){
+    var str3 = "";
+    if(obj2[i].id == aid){
+            for(var j=0;j<obj2[i].src.length;j++){
+              str3 +=`<img src=${obj2[i].src[j]}>;`
+              console.log(str3)
+            }
+
+            var omaximg = document.getElementById("middle");
+            omaximg.innerHTML = str3;
+            
+        }
+    }
+
+    var oinfo_box = document.getElementById("info_box");
+    var ofor = document.querySelector("#info_box>dl:nth-child(4)")
+    for(var i=0;i<obj2.length;i++){
+        if(obj2[i].id == aid){
+            if(obj2[i].gift){
+                var para = document.createElement("span");
+                para.className = "sp1";
+                oinfo_box.insertBefore(para,ofor)
+            }
+            var ospan = document.querySelector("#info_box>span");
+            ospan.innerHTML = obj2[i].gift;
+        }
+    }
+
+
+
+//放大镜
+function Magnifier(con,options){
+  this.olimg = document.querySelector(con);
+  this.box = this.olimg.querySelector(options.box);
+  this.filter = this.olimg.querySelector(options.filter);
+  this.max = this.olimg.querySelector(options.max);
+  this.bigImg = this.olimg.querySelector(options.bigImg);
+  this.middle = this.olimg.querySelector(options.middle);
+  this.minImg = this.olimg.querySelector(options.minImg);
+}
+
+
+Magnifier.prototype.info = function(){
+  this.boxover();
+  this.boxout();
+  this.filterMove(); 
+}
+
+//box 移入
+Magnifier.prototype.boxover = function(){
+  var _this = this;
+  this.box.onmouseover = function(){
+    _this.filter.style.display = "block";
+    _this.max.style.display = "block"
+  }
+}
+//box 移出
+Magnifier.prototype.boxout = function(){
+  var _this = this;
+  this.box.onmouseout = function(){
+    _this.filter.style.display = "";
+    _this.max.style.display = ""
+  }
+}
+//filter跟随移动
+Magnifier.prototype.filterMove = function(){
+    var _this = this;
+  this.filter.onmousemove = function(e){
+    var e = e||event;
+    var l = e.pageX - _this.olimg.offsetLeft -this.offsetWidth/2;
+    var t = e.pageY - _this.olimg.offsetTop - this.offsetHeight/2;
+    l = l >_this.box.offsetWidth - this.offsetWidth?_this.box.offsetWidth - this.offsetWidth:(l<0?0:l);
+    t = t >_this.box.offsetHeight - this.offsetHeight?_this.box.offsetHeight - this.offsetHeight:(t<0?0:t);
+    console.log(l)
+    console.log(t)
+    this.style.left = l+"px";
+    this.style.top = t+"px";
+    _this.bigImg.style.left = -2*l+"px";
+    _this.bigImg.style.top = -2*t+"px";
+    
+  }
+}
+
+new Magnifier("#limg",{
+    minImg:"#minImg",
+    middle:"#middle",
+    bigImg:".bigImg",
+    filter:".filter",
+    box:".box",
+    max:".max"
+}).info()
+</script>
